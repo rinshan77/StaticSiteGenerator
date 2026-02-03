@@ -1,6 +1,6 @@
 # Static Site Generator 
 
-A simple static site generator built in Python as part of the Boot.dev course.
+A simple static site generator built in Python.
 
 It converts Markdown files from `content/` into HTML pages, copies static assets (CSS/images) from `static/`, and outputs a complete site to `docs/` for GitHub Pages hosting.
 
