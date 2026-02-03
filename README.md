@@ -1,4 +1,4 @@
-# Static Site Generator (Boot.dev)
+# Static Site Generator 
 
 A simple static site generator built in Python as part of the Boot.dev course.
 
@@ -42,4 +42,4 @@ It converts Markdown files from `content/` into HTML pages, copies static assets
 Generate the site into `docs/` using the default base path `/`:
 
 ```bash
-python3 src/main.py
+./main.sh
