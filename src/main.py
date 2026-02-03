@@ -6,16 +6,12 @@ from generate_page import generate_pages_recursive
 
 
 def normalize_basepath(p: str) -> str:
-    # default
     if not p:
         return "/"
-    # ensure leading slash
     if not p.startswith("/"):
         p = "/" + p
-    # ensure trailing slash (GitHub Pages wants "/REPO/")
     if not p.endswith("/"):
         p += "/"
-    # collapse accidental "//"
     if p == "//":
         p = "/"
     return p

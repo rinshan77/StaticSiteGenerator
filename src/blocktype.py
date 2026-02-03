@@ -13,7 +13,6 @@ class BlockType(Enum):
 def block_to_block_type(block):
     lines = block.split("\n")
 
-    # heading: 1-6 #'s, then space
     if lines and lines[0].startswith("#"):
         i = 0
         while i < len(lines[0]) and lines[0][i] == "#":
@@ -21,19 +20,15 @@ def block_to_block_type(block):
         if 1 <= i <= 6 and len(lines[0]) > i and lines[0][i] == " ":
             return BlockType.HEADING
 
-    # code block: starts with ```\n and ends with ```
     if block.startswith("```\n") and block.endswith("```"):
         return BlockType.CODE
 
-    # quote: every line starts with >
     if lines and all(line.startswith(">") for line in lines):
         return BlockType.QUOTE
 
-    # unordered list: every line starts with "- "
     if lines and all(line.startswith("- ") for line in lines):
         return BlockType.UNORDERED_LIST
 
-    # ordered list: "1. " then "2. " etc
     if lines:
         expected = 1
         ok = True
@@ -47,4 +42,3 @@ def block_to_block_type(block):
             return BlockType.ORDERED_LIST
 
     return BlockType.PARAGRAPH
-
